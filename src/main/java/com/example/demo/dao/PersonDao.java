@@ -12,7 +12,7 @@ public interface PersonDao {
      * @param person model
      * @return boolean
      */
-    default int addPerson(Person person) {
+    default int insertPerson(Person person) {
         UUID id = UUID.randomUUID();
         return insertPerson(id, person);
     }
