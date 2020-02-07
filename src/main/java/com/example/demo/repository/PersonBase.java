@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.demo.repository;
 
 import com.example.demo.model.Person;
 
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface PersonDao {
+public interface PersonBase {
     int insertPerson(UUID id, Person person);
 
     /**

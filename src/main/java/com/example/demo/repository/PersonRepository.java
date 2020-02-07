@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.demo.repository;
 
 import com.example.demo.model.Person;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,11 +9,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository("personRepository")
-public class PersonDataAccessService implements PersonDao {
+public class PersonRepository implements PersonBase {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public PersonDataAccessService(JdbcTemplate jdbcTemplate) {
+    public PersonRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -22,7 +22,7 @@ public class PersonDataAccessService implements PersonDao {
         String sql = "INSERT INTO person (id,name) VALUES (?, ?)";
 
         return jdbcTemplate.update(sql,
-                person.getId(),
+                id,
                 person.getName());
     }
 
