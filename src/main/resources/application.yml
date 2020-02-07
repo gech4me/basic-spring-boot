@@ -1,0 +1,6 @@
+config:
+  postgresql:
+    jdbc-url: jdbc:postgresql://localhost:5432/getachew
+    username: gech2me
+    password: Password@1234
+    pool-size: 30
